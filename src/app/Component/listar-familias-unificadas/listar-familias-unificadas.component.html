@@ -1,0 +1,69 @@
+<div class="container wrapper">
+
+  <div class="inner">
+
+    <!-- BOTÓN -->
+    <div class="mb-3 text-end">
+      <button class="btn-morado" routerLink="/mapafamiliasetnicaspoblacion">
+        🌎 Ver Mapa de Familias Lingüísticas
+      </button>
+    </div>
+
+    <div class="mb-3 text-end">
+      <button class="btn-morado" routerLink="/listadopueblos">
+        Listado de pueblos
+      </button>
+    </div>
+
+    <h3>Listado de Familias Lingüísticas Unificadas</h3>
+
+    <!-- BUSCADOR -->
+    <input
+      type="text"
+      class="form-control mb-3"
+      placeholder="Buscar familia lingüística..."
+      [(ngModel)]="filtro"
+      (input)="filtrar()"
+    />
+
+    <!-- TABLA -->
+    <table class="table table-bordered table-hover">
+
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Familia Lingüística</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let f of datosPaginados; let i = index"
+            [class.fila-morada]="((paginaActual - 1) * registrosPorPagina + i) % 2 === 0"
+            [class.fila-blanca]="((paginaActual - 1) * registrosPorPagina + i) % 2 !== 0">
+
+          <td>{{ (paginaActual - 1) * registrosPorPagina + i + 1 }}</td>
+          <td>{{ f }}</td>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+    <!-- PAGINACIÓN -->
+    <div class="paginador">
+
+      <button (click)="anterior()" [disabled]="paginaActual === 1">
+        ⬅ Anterior
+      </button>
+
+      <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
+
+      <button (click)="siguiente()" [disabled]="paginaActual === totalPaginas">
+        Siguiente ➡
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

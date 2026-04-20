@@ -1,0 +1,69 @@
+:host {
+  display: block;
+  background-color: #6a1b9a;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Caja blanca principal */
+.inner {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Título */
+h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #4a148c;
+}
+
+/* Filas alternas */
+.fila-morada {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.fila-blanca {
+  background-color: #ffffff;
+  color: black;
+}
+
+/* Hover tabla */
+.table-hover tbody tr:hover {
+  background-color: #d1c4e9 !important;
+}
+
+/* Paginador */
+.paginador {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.paginador button {
+  background-color: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.paginador button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.paginador span {
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+/* Input */
+input.form-control {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}

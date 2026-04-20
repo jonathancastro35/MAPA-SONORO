@@ -1,0 +1,46 @@
+<div class="map-container">
+
+  <div id="map"></div>
+
+  <!-- 📦 SIDEBAR -->
+  <div class="panel" *ngIf="familiaSeleccionada">
+
+    <div class="panel-header">
+      <h3>🌿 {{ familiaSeleccionada }}</h3>
+      <button class="close-btn" (click)="cerrarPanel()">✖</button>
+    </div>
+
+    <h4>📚 Lenguas</h4>
+
+    <!-- ❌ SIN RESULTADOS -->
+    <div class="empty" *ngIf="lenguasSeleccionadas.length === 0">
+      No se encontraron pueblos para esta familia
+    </div>
+
+    <!-- 🟢 LISTA -->
+    <div class="panel-scroll">
+
+      <div class="lengua-item" *ngFor="let l of lenguasSeleccionadas">
+
+        <strong>{{ l.nombre }}</strong>
+
+        <div>
+          <strong>🌿 Familia:</strong> {{ l.familia }}
+        </div>
+
+       
+        <div class="lugares">
+          <strong>📍 Lugares:</strong>
+
+          <div *ngFor="let u of l.lugares">
+            👉 {{ u.nombre }}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

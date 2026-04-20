@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  background-color: #6a1b9a;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.inner {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+h3 {
+  text-align: center;
+  color: #4a148c;
+}
+
+.fila-morada {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.fila-blanca {
+  background-color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #d1c4e9 !important;
+}
+
+.paginador {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.paginador button {
+  background: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px;
+  border-radius: 6px;
+}
+
+.paginador button:disabled {
+  background: #ccc;
+}
+
+.btn-morado {
+  background: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+}
