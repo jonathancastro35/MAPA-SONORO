@@ -13,6 +13,9 @@ import { MapaFamiliasEtnicasComponent } from './Components/infopoblacion/mapa-fa
 import { ListarPueblosUnificadosComponent } from './Component/listar-pueblos-unificados/listar-pueblos-unificados.component';
 import { ListarFamiliasUnificadasComponent } from './Component/listar-familias-unificadas/listar-familias-unificadas.component';
 import { ListarPueblosDetalleComponent } from './Component/listar-pueblos-detalle/listar-pueblos-detalle.component';
+//import { MultimediaComponent } from './Component/multimedia/multimedia.component';
+import { MultimediaComponent } from './Component/multimedia/multimedia.component';
+
 
 
 @NgModule({
@@ -21,7 +24,8 @@ import { ListarPueblosDetalleComponent } from './Component/listar-pueblos-detall
     MapaFamiliasEtnicasComponent,
     ListarPueblosUnificadosComponent,
     ListarFamiliasUnificadasComponent,
-    ListarPueblosDetalleComponent
+    ListarPueblosDetalleComponent,
+    MultimediaComponent
   ],
   imports: [
     BrowserModule,

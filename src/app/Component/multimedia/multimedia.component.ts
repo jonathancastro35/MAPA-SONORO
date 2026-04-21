@@ -1,3 +1,4 @@
+
 import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 
@@ -7,16 +8,21 @@ import { SonidosImagenesAudiosService } from 'src/app/Services/materialmultimedi
 
 @Component({
   selector: 'app-mapa-familias-etnicas',
-  templateUrl: './mapa-familias-etnicas.component.html',
-  styleUrls: ['./mapa-familias-etnicas.component.css']
+  templateUrl: './multimedia.component.html',
+  styleUrls: ['./multimedia.component.css']
 })
-export class MapaFamiliasEtnicasComponent implements AfterViewInit {
+export class MultimediaComponent implements AfterViewInit {
 
   private map!: L.Map;
   private layer = L.layerGroup();
 
   familiaSeleccionada = '';
   lenguasSeleccionadas: any[] = [];
+
+  // 🎭 multimedia temporal
+  imagenes: string[] = [];
+  audios: string[] = [];
+  videos: string[] = [];
 
   constructor(
     private familiasService: FamiliasetnicasService,
@@ -39,7 +45,6 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
     this.layer.addTo(this.map);
   }
 
-  // 🎨 COLORES POR FAMILIA
   private colores: any = {
     'Chibcha': '#e74c3c',
     'Arawak': '#3498db',
@@ -76,18 +81,57 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
 
           layer.bindPopup(`
             <div class="popup-card">
-              <div class="popup-header">🌿 Familia lingüística</div>
-              <div class="popup-title">${familia}</div>
-              <button class="popup-btn">Ver pueblos</button>
+              <div class="popup-header">🌿 ${familia}</div>
+
+              <button class="popup-btn" id="btn-pueblos">📍 Pueblos</button>
+              <button class="popup-btn" id="btn-img">🖼 Imágenes</button>
+              <button class="popup-btn" id="btn-audio">🎧 Audios</button>
+              <button class="popup-btn" id="btn-video">🎬 Videos</button>
             </div>
           `);
 
           layer.on('popupopen', (e: any) => {
-            const popup = e.popup._contentNode;
-            const btn = popup.querySelector('.popup-btn');
 
-            if (btn) {
-              btn.onclick = () => this.verLenguas(familia);
+            const popup = e.popup._contentNode;
+
+            const btnPueblos = popup.querySelector('#btn-pueblos');
+            const btnImg = popup.querySelector('#btn-img');
+            const btnAudio = popup.querySelector('#btn-audio');
+            const btnVideo = popup.querySelector('#btn-video');
+
+            // 📍 pueblos
+            if (btnPueblos) {
+              btnPueblos.onclick = () => this.verLenguas(familia);
+            }
+
+            // 🖼 imágenes
+            if (btnImg) {
+              btnImg.onclick = () => {
+                this.multimediaService.getImagenes(familia).subscribe(res => {
+                  this.imagenes = res;
+                  console.log('IMÁGENES:', res);
+                });
+              };
+            }
+
+            // 🎧 audios
+            if (btnAudio) {
+              btnAudio.onclick = () => {
+                this.multimediaService.getAudios(familia).subscribe(res => {
+                  this.audios = res;
+                  console.log('AUDIOS:', res);
+                });
+              };
+            }
+
+            // 🎬 videos
+            if (btnVideo) {
+              btnVideo.onclick = () => {
+                this.multimediaService.getVideos(familia).subscribe(res => {
+                  this.videos = res;
+                  console.log('VIDEOS:', res);
+                });
+              };
             }
           });
         }
@@ -98,21 +142,15 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
     });
   }
 
-  // 🔥 CLICK EN FAMILIA (SOLO LISTAR)
   verLenguas(familia: string): void {
 
     this.familiaSeleccionada = familia;
 
-    this.lenguasService.getPorFamilia(familia)
-      .subscribe(res => {
-
-        this.lenguasSeleccionadas = res || [];
-
-        this.map.closePopup();
-
-        // limpiar cualquier marcador si existiera
-        this.layer.clearLayers();
-      });
+    this.lenguasService.getPorFamilia(familia).subscribe(res => {
+      this.lenguasSeleccionadas = res || [];
+      this.map.closePopup();
+      this.layer.clearLayers();
+    });
   }
 
   cerrarPanel(): void {

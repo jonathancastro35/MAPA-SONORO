@@ -1,0 +1,39 @@
+<p>multimedia works!</p>
+<div class="map-container">
+
+  <!-- BOTONES -->
+  <div class="top-button">
+
+    <button class="btn-morado" routerLink="/listadopueblos">
+      ⬅ Volver
+    </button>
+
+    <button class="btn-morado" routerLink="/listadopueblos">
+      Pueblos
+    </button>
+
+    <button class="btn-morado" routerLink="/listadofamiliasunificadas">
+      Familias
+    </button>
+
+  </div>
+
+  <!-- MAPA -->
+  <div id="map"></div>
+
+  <!-- PANEL -->
+  <div class="panel" *ngIf="familiaSeleccionada">
+
+    <div class="panel-header">
+      <h3>🌿 {{ familiaSeleccionada }}</h3>
+      <button class="close-btn" (click)="cerrarPanel()">✖</button>
+    </div>
+
+    <div *ngFor="let l of lenguasSeleccionadas">
+      <strong>{{ l.nombre }}</strong>
+      <div>🌿 {{ l.familia }}</div>
+    </div>
+
+  </div>
+
+</div>
