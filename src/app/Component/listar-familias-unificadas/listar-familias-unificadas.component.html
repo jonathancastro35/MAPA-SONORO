@@ -2,7 +2,7 @@
 
   <div class="inner">
 
-    <!-- 🔘 BOTÓN INICIO -->
+    <!-- 🔘 BOTÓN VOLVER (NO TOCAR) -->
     <div class="mb-3 text-end">
       <button class="btn-morado" routerLink="/listadopueblos">
         Volver a inicio
@@ -12,13 +12,10 @@
     <h3>Listado de familias lingüísticas</h3>
 
     <!-- 🔎 BUSCADOR -->
-    <input
-      type="text"
-      class="form-control mb-3"
-      placeholder="Buscar familia lingüística..."
-      [(ngModel)]="filtro"
-      (input)="filtrar()"
-    />
+    <input class="form-control mb-3"
+           [(ngModel)]="filtro"
+           (input)="filtrar()"
+           placeholder="Buscar..." />
 
     <!-- 📋 TABLA -->
     <table class="table table-bordered table-hover">
@@ -26,18 +23,15 @@
       <thead class="table-dark">
         <tr>
           <th>#</th>
-          <th>Familia Lingüística</th>
+          <th>Familia</th>
           <th>Multimedia</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr *ngFor="let f of datosPaginados; let i = index"
-            [class.fila-morada]="((paginaActual - 1) * registrosPorPagina + i) % 2 === 0"
-            [class.fila-blanca]="((paginaActual - 1) * registrosPorPagina + i) % 2 !== 0">
+        <tr *ngFor="let f of datosPaginados; let i = index">
 
           <td>{{ (paginaActual - 1) * registrosPorPagina + i + 1 }}</td>
-
           <td>{{ f }}</td>
 
           <td>
@@ -53,24 +47,15 @@
 
     <!-- 📄 PAGINACIÓN -->
     <div class="paginador">
-
-      <button (click)="anterior()" [disabled]="paginaActual === 1">
-        ⬅ Anterior
-      </button>
-
-      <span>Página {{ paginaActual }} de {{ totalPaginas }}</span>
-
-      <button (click)="siguiente()" [disabled]="paginaActual === totalPaginas">
-        Siguiente ➡
-      </button>
-
+      <button (click)="anterior()" [disabled]="paginaActual === 1">⬅</button>
+      <span>{{ paginaActual }} / {{ totalPaginas }}</span>
+      <button (click)="siguiente()" [disabled]="paginaActual === totalPaginas">➡</button>
     </div>
 
   </div>
-
 </div>
 
-<!-- 🎭 MODAL MULTIMEDIA -->
+<!-- 🎭 MODAL -->
 <div class="overlay" *ngIf="mostrarModal">
 
   <div class="modal-box">
@@ -83,25 +68,44 @@
     <div class="lista">
       <img *ngFor="let img of imagenes"
            [src]="img"
-           class="mini-img" />
+           class="mini-img"
+           (click)="verImagen(img)" />
     </div>
 
     <!-- 🎧 AUDIOS -->
     <div class="lista">
-      <audio *ngFor="let a of audios"
-             [src]="a"
-             controls></audio>
+      <audio *ngFor="let a of audios" [src]="a" controls></audio>
     </div>
 
     <!-- 🎬 VIDEOS -->
     <div class="lista">
-      <video *ngFor="let v of videos"
-             [src]="v"
-             controls
-             class="video-preview">
-      </video>
+      <div *ngFor="let v of videos"
+           class="video-card"
+           (click)="verVideo(v)">
+        🎬 Ver video
+      </div>
     </div>
 
   </div>
+</div>
 
+<!-- 🖼 IMAGE PREVIEW -->
+<div class="overlay" *ngIf="imagenSeleccionada">
+  <div class="modal-box">
+    <button class="close" (click)="cerrarImagen()">✖</button>
+    <img [src]="imagenSeleccionada" />
+  </div>
+</div>
+
+<!-- 🎬 VIDEO PREVIEW -->
+<div class="overlay" *ngIf="videoSeleccionado">
+  <div class="modal-box">
+    <button class="close" (click)="cerrarVideo()">✖</button>
+
+    <video [src]="videoSeleccionado"
+           controls
+           autoplay>
+    </video>
+
+  </div>
 </div>

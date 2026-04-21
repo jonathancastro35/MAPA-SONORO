@@ -9,26 +9,27 @@ import { SonidosImagenesAudiosService } from 'src/app/Services/materialmultimedi
 })
 export class ListarFamiliasUnificadasComponent implements OnInit {
 
-  // 📌 LISTADO
   listarFamilias: string[] = [];
   listaFiltrada: string[] = [];
   datosPaginados: string[] = [];
 
-  // 📌 PAGINACIÓN
   paginaActual = 1;
   registrosPorPagina = 20;
   totalPaginas = 0;
 
-  // 📌 FILTRO
   filtro = '';
 
-  // 📌 MODAL MULTIMEDIA
+  // 🎭 modal multimedia
   mostrarModal = false;
   multimediaFamilia = '';
 
   imagenes: string[] = [];
   audios: string[] = [];
   videos: string[] = [];
+
+  // 🖼 / 🎬 preview
+  imagenSeleccionada: string | null = null;
+  videoSeleccionado: string | null = null;
 
   constructor(
     private service: FamiliasLingusticasUnificadasService,
@@ -39,19 +40,14 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.cargarDatos();
   }
 
-  // 🔹 CARGAR FAMILIAS
   cargarDatos(): void {
-    this.service.getFamiliasUnificadas().subscribe({
-      next: (data: string[]) => {
-        this.listarFamilias = data.map(x => x.trim());
-        this.listaFiltrada = [...this.listarFamilias];
-        this.calcularPaginacion();
-      },
-      error: (err) => console.error(err)
+    this.service.getFamiliasUnificadas().subscribe(data => {
+      this.listarFamilias = data.map(x => x.trim());
+      this.listaFiltrada = [...this.listarFamilias];
+      this.calcularPaginacion();
     });
   }
 
-  // 🔹 FILTRO
   filtrar(): void {
     const valor = this.filtro.toLowerCase();
 
@@ -63,7 +59,6 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.calcularPaginacion();
   }
 
-  // 🔹 PAGINACIÓN
   calcularPaginacion(): void {
     this.totalPaginas = Math.ceil(this.listaFiltrada.length / this.registrosPorPagina);
     this.actualizarPagina();
@@ -90,13 +85,12 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     }
   }
 
-  // 🎭 ABRIR MODAL MULTIMEDIA
+  // 🎭 abrir modal multimedia
   abrirMultimedia(familia: string): void {
 
     this.multimediaFamilia = familia;
     this.mostrarModal = true;
 
-    // limpiar antes de cargar
     this.imagenes = [];
     this.audios = [];
     this.videos = [];
@@ -111,12 +105,25 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
       .subscribe(r => this.videos = r);
   }
 
-  // ❌ CERRAR MODAL
   cerrarModal(): void {
     this.mostrarModal = false;
+  }
 
-    this.imagenes = [];
-    this.audios = [];
-    this.videos = [];
+  // 🖼 preview imagen
+  verImagen(img: string) {
+    this.imagenSeleccionada = img;
+  }
+
+  cerrarImagen() {
+    this.imagenSeleccionada = null;
+  }
+
+  // 🎬 preview video
+  verVideo(v: string) {
+    this.videoSeleccionado = v;
+  }
+
+  cerrarVideo() {
+    this.videoSeleccionado = null;
   }
 }

@@ -5,7 +5,6 @@
   padding: 20px;
 }
 
-/* 📦 CONTENEDOR */
 .inner {
   background: white;
   padding: 20px;
@@ -17,7 +16,7 @@ h3 {
   color: #4a148c;
 }
 
-/* 🔘 BOTÓN */
+/* 🔘 botones */
 .btn-morado {
   background: #6a1b9a;
   color: white;
@@ -31,40 +30,18 @@ h3 {
   background: #4a148c;
 }
 
-/* 📊 TABLA */
-.fila-morada {
-  background-color: #6a1b9a;
-  color: white;
-}
-
-.fila-blanca {
-  background-color: white;
-}
-
+/* 📊 tabla */
 .table-hover tbody tr:hover {
-  background-color: #d1c4e9 !important;
+  background: #d1c4e9 !important;
 }
 
-/* 📄 PAGINACIÓN */
+/* 📄 paginación */
 .paginador {
   text-align: center;
   margin-top: 15px;
 }
 
-.paginador button {
-  background: #6a1b9a;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  margin: 5px;
-  border-radius: 6px;
-}
-
-.paginador button:disabled {
-  background: #ccc;
-}
-
-/* 🎭 OVERLAY */
+/* 🎭 MODAL */
 .overlay {
   position: fixed;
   inset: 0;
@@ -75,7 +52,6 @@ h3 {
   z-index: 20000;
 }
 
-/* 📦 MODAL */
 .modal-box {
   background: white;
   padding: 20px;
@@ -87,7 +63,7 @@ h3 {
   text-align: center;
 }
 
-/* ❌ X ROJA */
+/* ❌ cerrar */
 .close {
   position: absolute;
   top: 10px;
@@ -101,21 +77,31 @@ h3 {
   cursor: pointer;
 }
 
-/* 🖼 IMÁGENES */
+/* 🖼 imágenes clicables */
 .mini-img {
   width: 120px;
   margin: 5px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-/* 🎬 VIDEOS */
-.video-preview {
-  width: 200px;
+/* 🎬 videos lista */
+.video-card {
+  background: #6a1b9a;
+  color: white;
+  padding: 10px;
   margin: 5px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
-/* LISTA */
+.modal-box img,
+.modal-box video {
+  max-width: 75vw;
+  max-height: 75vh;
+  border-radius: 10px;
+}
+
 .lista {
   margin-top: 10px;
 }
