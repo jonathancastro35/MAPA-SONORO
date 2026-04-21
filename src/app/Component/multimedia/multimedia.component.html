@@ -2,52 +2,49 @@
 
   <div id="map"></div>
 
-  <!-- PANEL PUEBLOS -->
-  <div class="panel" *ngIf="familiaSeleccionada">
-    <div class="panel-header">
-      <h3>{{ familiaSeleccionada }}</h3>
-      <button (click)="cerrarPanel()">✖</button>
-    </div>
-
-    <div *ngFor="let l of lenguasSeleccionadas">
-      <strong>{{ l.nombre }}</strong>
-    </div>
-  </div>
-
-  <!-- PANEL MULTIMEDIA -->
+  <!-- 📂 PANEL MULTIMEDIA (derecha) -->
   <div class="panel-multimedia" *ngIf="panelMultimedia">
 
     <div class="panel-header">
-      <h3>Multimedia</h3>
+      <h3>🎭 Multimedia</h3>
       <button (click)="cerrarMultimedia()">✖</button>
     </div>
 
-    <!-- IMÁGENES -->
-    <div *ngIf="multimediaTipo === 'imagenes'">
+    <!-- 🖼 IMÁGENES -->
+    <div *ngIf="multimediaTipo === 'imagenes'" class="lista">
+
       <img *ngFor="let img of imagenes"
            [src]="img"
            class="mini-img"
            (click)="verImagen(img)" />
+
     </div>
 
-    <!-- AUDIOS -->
-    <div *ngIf="multimediaTipo === 'audios'">
+    <!-- 🎧 AUDIOS -->
+    <div *ngIf="multimediaTipo === 'audios'" class="lista">
       <audio *ngFor="let a of audios" [src]="a" controls></audio>
     </div>
 
-    <!-- VIDEOS -->
-    <div *ngIf="multimediaTipo === 'videos'">
-      <a *ngFor="let v of videos" [href]="v" target="_blank">{{ v }}</a>
+    <!-- 🎬 VIDEOS -->
+    <div *ngIf="multimediaTipo === 'videos'" class="lista">
+      <a *ngFor="let v of videos" [href]="v" target="_blank">
+        🎬 Ver video
+      </a>
     </div>
 
   </div>
 
-  <!-- PREVIEW -->
+  <!-- 🔍 PREVIEW IMAGEN -->
   <div class="overlay" *ngIf="imagenSeleccionada">
-    <div class="preview">
-      <button (click)="cerrarPreview()">✖</button>
-      <img [src]="imagenSeleccionada">
+
+    <div class="preview-box">
+
+      <button class="close" (click)="cerrarPreview()">✖</button>
+
+      <img [src]="imagenSeleccionada" />
+
     </div>
+
   </div>
 
 </div>

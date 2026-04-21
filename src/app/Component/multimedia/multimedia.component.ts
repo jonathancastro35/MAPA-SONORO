@@ -83,7 +83,6 @@ export class MultimediaComponent implements AfterViewInit {
             <div class="popup-card">
               <div class="popup-header">${familia}</div>
 
-              <button class="popup-btn" id="btn-pueblos">📍 Pueblos</button>
               <button class="popup-btn" id="btn-img">🖼 Imágenes</button>
               <button class="popup-btn" id="btn-audio">🎧 Audios</button>
               <button class="popup-btn" id="btn-video">🎬 Videos</button>
@@ -93,10 +92,6 @@ export class MultimediaComponent implements AfterViewInit {
           layer.on('popupopen', (e: any) => {
 
             const popup = e.popup._contentNode;
-
-            popup.querySelector('#btn-pueblos')?.addEventListener('click', () => {
-              this.verLenguas(familia);
-            });
 
             popup.querySelector('#btn-img')?.addEventListener('click', () => {
               this.loadMedia(familia, 'imagenes');
@@ -125,34 +120,24 @@ export class MultimediaComponent implements AfterViewInit {
     this.panelMultimedia = true;
     this.multimediaTipo = tipo;
 
+    this.imagenes = [];
+    this.audios = [];
+    this.videos = [];
+
     if (tipo === 'imagenes') {
-      this.multimediaService.getImagenes(nombre).subscribe(r => this.imagenes = r);
+      this.multimediaService.getImagenes(nombre)
+        .subscribe(r => this.imagenes = r);
     }
 
     if (tipo === 'audios') {
-      this.multimediaService.getAudios(nombre).subscribe(r => this.audios = r);
+      this.multimediaService.getAudios(nombre)
+        .subscribe(r => this.audios = r);
     }
 
     if (tipo === 'videos') {
-      this.multimediaService.getVideos(nombre).subscribe(r => this.videos = r);
+      this.multimediaService.getVideos(nombre)
+        .subscribe(r => this.videos = r);
     }
-  }
-
-  verLenguas(familia: string): void {
-
-    this.familiaSeleccionada = familia;
-
-    this.lenguasService.getPorFamilia(familia).subscribe(res => {
-      this.lenguasSeleccionadas = res || [];
-      this.map.closePopup();
-      this.layer.clearLayers();
-    });
-  }
-
-  cerrarPanel(): void {
-    this.familiaSeleccionada = '';
-    this.lenguasSeleccionadas = [];
-    this.layer.clearLayers();
   }
 
   cerrarMultimedia(): void {
@@ -169,5 +154,11 @@ export class MultimediaComponent implements AfterViewInit {
 
   cerrarPreview() {
     this.imagenSeleccionada = null;
+  }
+
+  cerrarPanel(): void {
+    this.familiaSeleccionada = '';
+    this.lenguasSeleccionadas = [];
+    this.layer.clearLayers();
   }
 }
