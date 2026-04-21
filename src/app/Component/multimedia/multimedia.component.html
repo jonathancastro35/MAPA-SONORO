@@ -1,66 +1,53 @@
 <div class="map-container">
 
-  <!-- 🔘 BOTÓN VOLVER -->
-  <div class="top-button">
-    <button class="btn-morado" routerLink="/listadopueblos">
-      ⬅ Volver a inicio
-    </button>
-    <button class="btn-morado" routerLink="/listadopueblos">
-        Listado pueblos
-      </button>
-      <button class="btn-morado" routerLink="/listadofamiliasunificadas">
-        Listado familias
-      </button>
-      <button class="btn-morado" routerLink="/listadopueblosdetalles">
-        Listado pueblos familias
-      </button>
-  </div>
-
-  <!-- 🗺️ MAPA -->
   <div id="map"></div>
 
-  <!-- 📦 SIDEBAR -->
+  <!-- PANEL PUEBLOS -->
   <div class="panel" *ngIf="familiaSeleccionada">
-
-    <!-- HEADER -->
     <div class="panel-header">
-      <h3>🌿 {{ familiaSeleccionada }}</h3>
-      <button class="close-btn" (click)="cerrarPanel()">✖</button>
+      <h3>{{ familiaSeleccionada }}</h3>
+      <button (click)="cerrarPanel()">✖</button>
     </div>
 
-    <h4>📚 Lenguas</h4>
+    <div *ngFor="let l of lenguasSeleccionadas">
+      <strong>{{ l.nombre }}</strong>
+    </div>
+  </div>
 
-    <!-- ❌ SIN RESULTADOS -->
-    <div class="empty" *ngIf="lenguasSeleccionadas.length === 0">
-      No se encontraron pueblos para esta familia
+  <!-- PANEL MULTIMEDIA -->
+  <div class="panel-multimedia" *ngIf="panelMultimedia">
+
+    <div class="panel-header">
+      <h3>Multimedia</h3>
+      <button (click)="cerrarMultimedia()">✖</button>
     </div>
 
-    <!-- 🟢 LISTA -->
-    <div class="panel-scroll">
-
-      <div class="lengua-item" *ngFor="let l of lenguasSeleccionadas">
-
-        <!-- NOMBRE LENGUA -->
-        <strong>{{ l.nombre }}</strong>
-
-        <!-- FAMILIA -->
-        <div>
-          <strong>🌿 Familia:</strong> {{ l.familia }}
-        </div>
-
-        <!-- LUGARES -->
-        <div class="lugares">
-          <strong>📍 Lugares:</strong>
-
-          <div *ngFor="let u of l.lugares">
-            👉 {{ u.nombre }}
-          </div>
-        </div>
-
-      </div>
-
+    <!-- IMÁGENES -->
+    <div *ngIf="multimediaTipo === 'imagenes'">
+      <img *ngFor="let img of imagenes"
+           [src]="img"
+           class="mini-img"
+           (click)="verImagen(img)" />
     </div>
 
+    <!-- AUDIOS -->
+    <div *ngIf="multimediaTipo === 'audios'">
+      <audio *ngFor="let a of audios" [src]="a" controls></audio>
+    </div>
+
+    <!-- VIDEOS -->
+    <div *ngIf="multimediaTipo === 'videos'">
+      <a *ngFor="let v of videos" [href]="v" target="_blank">{{ v }}</a>
+    </div>
+
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="overlay" *ngIf="imagenSeleccionada">
+    <div class="preview">
+      <button (click)="cerrarPreview()">✖</button>
+      <img [src]="imagenSeleccionada">
+    </div>
   </div>
 
 </div>
