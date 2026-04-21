@@ -43,12 +43,12 @@
     },
     {
       "id": 3,
-      "nombre": "ARAWAWK",
+      "nombre": "CHIBCHA",
       "descripcion": "Registro alternativo asociado al conjunto de lenguas Arawak en algunas fuentes.",
       "paises": ["Colombia", "Venezuela"],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/arawawk1.jpg"
+          "https://img.lalr.co/cms/2017/07/07175655/Ind%C3%ADgenas-Arhuacos-Colprensa.jpg"
         ],
         "audios": [
           "https://ejemplo.com/arawawk1.mp3",
