@@ -1,0 +1,100 @@
+{
+  "Material_linguistico": [
+    {
+      "id": 1,
+      "nombre": "AISLADA",
+      "descripcion": "Lenguas sin parentesco comprobado con otras familias lingüísticas conocidas.",
+      "paises": ["Colombia"],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/aislada1.jpg",
+          "https://ejemplo.com/aislada2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/aislada1.mp3",
+          "https://ejemplo.com/aislada2.mp3"
+        ],
+        "videos": [
+          "https://www.youtube.com/watch?v=videoA",
+          "https://www.youtube.com/watch?v=videoB"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "nombre": "ARAWAK",
+      "descripcion": "Familia lingüística ampliamente distribuida en América del Sur y el Caribe con gran diversidad de lenguas.",
+      "paises": ["Colombia", "Venezuela", "Brasil"],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/arawak1.jpg",
+          "https://ejemplo.com/arawak2.jpg",
+          "https://ejemplo.com/arawak3.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/arawak1.mp3",
+          "https://ejemplo.com/arawak2.mp3"
+        ],
+        "videos": [
+          "https://www.youtube.com/watch?v=arawak1",
+          "https://www.youtube.com/watch?v=arawak2"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "nombre": "ARAWAWK",
+      "descripcion": "Registro alternativo asociado al conjunto de lenguas Arawak en algunas fuentes.",
+      "paises": ["Colombia", "Venezuela"],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/arawawk1.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/arawawk1.mp3",
+          "https://ejemplo.com/arawawk2.mp3"
+        ],
+        "videos": [
+          "https://www.youtube.com/watch?v=arawawk1"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "nombre": "GUAHIBO",
+      "descripcion": "Lenguas habladas en los Llanos de Colombia y Venezuela con diversidad dialectal.",
+      "paises": ["Colombia", "Venezuela"],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/guahibo1.jpg",
+          "https://ejemplo.com/guahibo2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/guahibo1.mp3"
+        ],
+        "videos": [
+          "https://www.youtube.com/watch?v=guahibo1",
+          "https://www.youtube.com/watch?v=guahibo2"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "HUITOTO",
+      "descripcion": "Familia lingüística amazónica con varias lenguas en Colombia y Perú.",
+      "paises": ["Colombia", "Perú"],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://www.youtube.com/watch?v=huitoto1"
+        ]
+      }
+    }
+  ]
+}
