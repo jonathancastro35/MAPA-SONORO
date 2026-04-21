@@ -1,13 +1,35 @@
 <div class="map-container">
 
+  <!-- 🔘 BOTONES SUPERIORES (NO SE QUITAN) -->
+  <div class="top-button">
+
+    <button class="btn-morado" routerLink="/listadopueblos">
+      ⬅ Volver a inicio
+    </button>
+
+    <button class="btn-morado" routerLink="/listadopueblos">
+      Listado pueblos
+    </button>
+
+    <button class="btn-morado" routerLink="/listadofamiliasunificadas">
+      Listado familias
+    </button>
+
+    <button class="btn-morado" routerLink="/listadopueblosdetalles">
+      Listado pueblos familias
+    </button>
+
+  </div>
+
+  <!-- 🗺 MAPA -->
   <div id="map"></div>
 
-  <!-- 📂 PANEL MULTIMEDIA (derecha) -->
+  <!-- 📂 PANEL MULTIMEDIA -->
   <div class="panel-multimedia" *ngIf="panelMultimedia">
 
     <div class="panel-header">
       <h3>🎭 Multimedia</h3>
-      <button (click)="cerrarMultimedia()">✖</button>
+      <button class="close" (click)="cerrarMultimedia()">✖</button>
     </div>
 
     <!-- 🖼 IMÁGENES -->
@@ -22,19 +44,25 @@
 
     <!-- 🎧 AUDIOS -->
     <div *ngIf="multimediaTipo === 'audios'" class="lista">
+
       <audio *ngFor="let a of audios" [src]="a" controls></audio>
+
     </div>
 
     <!-- 🎬 VIDEOS -->
     <div *ngIf="multimediaTipo === 'videos'" class="lista">
-      <a *ngFor="let v of videos" [href]="v" target="_blank">
+
+      <div *ngFor="let v of videos"
+           class="video-card"
+           (click)="verVideo(v)">
         🎬 Ver video
-      </a>
+      </div>
+
     </div>
 
   </div>
 
-  <!-- 🔍 PREVIEW IMAGEN -->
+  <!-- 🖼 PREVIEW IMAGEN -->
   <div class="overlay" *ngIf="imagenSeleccionada">
 
     <div class="preview-box">
@@ -42,6 +70,24 @@
       <button class="close" (click)="cerrarPreview()">✖</button>
 
       <img [src]="imagenSeleccionada" />
+
+    </div>
+
+  </div>
+
+  <!-- 🎬 PREVIEW VIDEO -->
+  <div class="overlay" *ngIf="videoSeleccionado">
+
+    <div class="preview-box">
+
+      <button class="close" (click)="cerrarVideo()">✖</button>
+
+      <video
+        [src]="videoSeleccionado"
+        controls
+        autoplay
+        class="video-preview">
+      </video>
 
     </div>
 

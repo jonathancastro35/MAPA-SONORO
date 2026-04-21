@@ -2,7 +2,6 @@ import { Component, AfterViewInit } from '@angular/core';
 import * as L from 'leaflet';
 
 import { FamiliasetnicasService } from 'src/app/Services/familiasetnicas.service';
-import { LenguaspoblacionetnicaService } from 'src/app/Services/lenguaspoblacionetnica.service';
 import { SonidosImagenesAudiosService } from 'src/app/Services/materialmultimedia/sonidosimagenesaudios.service';
 
 @Component({
@@ -15,9 +14,6 @@ export class MultimediaComponent implements AfterViewInit {
   private map!: L.Map;
   private layer = L.layerGroup();
 
-  familiaSeleccionada = '';
-  lenguasSeleccionadas: any[] = [];
-
   panelMultimedia = false;
   multimediaTipo: 'imagenes' | 'audios' | 'videos' | '' = '';
 
@@ -26,10 +22,10 @@ export class MultimediaComponent implements AfterViewInit {
   videos: string[] = [];
 
   imagenSeleccionada: string | null = null;
+  videoSeleccionado: string | null = null;
 
   constructor(
     private familiasService: FamiliasetnicasService,
-    private lenguasService: LenguaspoblacionetnicaService,
     private multimediaService: SonidosImagenesAudiosService
   ) {}
 
@@ -148,6 +144,7 @@ export class MultimediaComponent implements AfterViewInit {
     this.videos = [];
   }
 
+  // 🖼 IMAGEN MODAL
   verImagen(img: string) {
     this.imagenSeleccionada = img;
   }
@@ -156,9 +153,12 @@ export class MultimediaComponent implements AfterViewInit {
     this.imagenSeleccionada = null;
   }
 
-  cerrarPanel(): void {
-    this.familiaSeleccionada = '';
-    this.lenguasSeleccionadas = [];
-    this.layer.clearLayers();
+  // 🎬 VIDEO MODAL
+  verVideo(video: string) {
+    this.videoSeleccionado = video;
+  }
+
+  cerrarVideo() {
+    this.videoSeleccionado = null;
   }
 }
