@@ -2,7 +2,7 @@
 
   <div class="inner">
 
-    <!-- BOTONES -->
+    <!-- BOTÓN -->
     <div class="mb-3 text-end">
       <button class="btn-morado" routerLink="/mapafamiliasetnicaspoblacion">
         🌎 Ver Mapa
@@ -27,8 +27,6 @@
         <tr>
           <th>#</th>
           <th>Pueblo</th>
-          <th>Denominación</th>
-          <th>Autodenominación</th>
           <th>Familia</th>
         </tr>
       </thead>
@@ -41,10 +39,6 @@
           <td>{{ (paginaActual - 1) * registrosPorPagina + i + 1 }}</td>
 
           <td>{{ item.pueblo }}</td>
-
-          <td>{{ item.denominacion_lengua || '-' }}</td>
-
-          <td>{{ item.autodenominacion_de_la_lengua || '-' }}</td>
 
           <td>{{ item.familia_linguistica || '-' }}</td>
 
