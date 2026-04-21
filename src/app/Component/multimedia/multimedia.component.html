@@ -1,6 +1,6 @@
 <div class="map-container">
 
-  <!-- 🔘 BOTONES SUPERIORES (NO SE QUITAN) -->
+  <!-- 🔘 BOTONES (NO SE TOCAN) -->
   <div class="top-button">
 
     <button class="btn-morado" routerLink="/listadopueblos">
@@ -24,7 +24,7 @@
   <!-- 🗺 MAPA -->
   <div id="map"></div>
 
-  <!-- 📂 PANEL MULTIMEDIA -->
+  <!-- 📂 PANEL -->
   <div class="panel-multimedia" *ngIf="panelMultimedia">
 
     <div class="panel-header">
@@ -32,65 +32,48 @@
       <button class="close" (click)="cerrarMultimedia()">✖</button>
     </div>
 
-    <!-- 🖼 IMÁGENES -->
+    <!-- IMÁGENES -->
     <div *ngIf="multimediaTipo === 'imagenes'" class="lista">
-
       <img *ngFor="let img of imagenes"
            [src]="img"
            class="mini-img"
            (click)="verImagen(img)" />
-
     </div>
 
-    <!-- 🎧 AUDIOS -->
+    <!-- AUDIOS -->
     <div *ngIf="multimediaTipo === 'audios'" class="lista">
-
       <audio *ngFor="let a of audios" [src]="a" controls></audio>
-
     </div>
 
-    <!-- 🎬 VIDEOS -->
+    <!-- VIDEOS -->
     <div *ngIf="multimediaTipo === 'videos'" class="lista">
-
       <div *ngFor="let v of videos"
            class="video-card"
            (click)="verVideo(v)">
         🎬 Ver video
       </div>
-
     </div>
 
   </div>
 
-  <!-- 🖼 PREVIEW IMAGEN -->
+  <!-- 🖼 IMAGEN MODAL -->
   <div class="overlay" *ngIf="imagenSeleccionada">
-
-    <div class="preview-box">
-
+    <div class="modal-box">
       <button class="close" (click)="cerrarPreview()">✖</button>
-
       <img [src]="imagenSeleccionada" />
-
     </div>
-
   </div>
 
-  <!-- 🎬 PREVIEW VIDEO -->
+  <!-- 🎬 VIDEO MODAL -->
   <div class="overlay" *ngIf="videoSeleccionado">
-
-    <div class="preview-box">
-
+    <div class="modal-box">
       <button class="close" (click)="cerrarVideo()">✖</button>
 
-      <video
-        [src]="videoSeleccionado"
-        controls
-        autoplay
-        class="video-preview">
+      <video [src]="videoSeleccionado"
+             controls
+             autoplay>
       </video>
-
     </div>
-
   </div>
 
 </div>
