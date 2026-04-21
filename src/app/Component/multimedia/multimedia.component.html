@@ -1,37 +1,64 @@
-<p>multimedia works!</p>
 <div class="map-container">
 
-  <!-- BOTONES -->
+  <!-- 🔘 BOTÓN VOLVER -->
   <div class="top-button">
-
     <button class="btn-morado" routerLink="/listadopueblos">
-      ⬅ Volver
+      ⬅ Volver a inicio
     </button>
-
     <button class="btn-morado" routerLink="/listadopueblos">
-      Pueblos
-    </button>
-
-    <button class="btn-morado" routerLink="/listadofamiliasunificadas">
-      Familias
-    </button>
-
+        Listado pueblos
+      </button>
+      <button class="btn-morado" routerLink="/listadofamiliasunificadas">
+        Listado familias
+      </button>
+      <button class="btn-morado" routerLink="/listadopueblosdetalles">
+        Listado pueblos familias
+      </button>
   </div>
 
-  <!-- MAPA -->
+  <!-- 🗺️ MAPA -->
   <div id="map"></div>
 
-  <!-- PANEL -->
+  <!-- 📦 SIDEBAR -->
   <div class="panel" *ngIf="familiaSeleccionada">
 
+    <!-- HEADER -->
     <div class="panel-header">
       <h3>🌿 {{ familiaSeleccionada }}</h3>
       <button class="close-btn" (click)="cerrarPanel()">✖</button>
     </div>
 
-    <div *ngFor="let l of lenguasSeleccionadas">
-      <strong>{{ l.nombre }}</strong>
-      <div>🌿 {{ l.familia }}</div>
+    <h4>📚 Lenguas</h4>
+
+    <!-- ❌ SIN RESULTADOS -->
+    <div class="empty" *ngIf="lenguasSeleccionadas.length === 0">
+      No se encontraron pueblos para esta familia
+    </div>
+
+    <!-- 🟢 LISTA -->
+    <div class="panel-scroll">
+
+      <div class="lengua-item" *ngFor="let l of lenguasSeleccionadas">
+
+        <!-- NOMBRE LENGUA -->
+        <strong>{{ l.nombre }}</strong>
+
+        <!-- FAMILIA -->
+        <div>
+          <strong>🌿 Familia:</strong> {{ l.familia }}
+        </div>
+
+        <!-- LUGARES -->
+        <div class="lugares">
+          <strong>📍 Lugares:</strong>
+
+          <div *ngFor="let u of l.lugares">
+            👉 {{ u.nombre }}
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
   </div>

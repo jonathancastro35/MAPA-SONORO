@@ -3,7 +3,7 @@ import * as L from 'leaflet';
 
 import { FamiliasetnicasService } from 'src/app/Services/familiasetnicas.service';
 import { LenguaspoblacionetnicaService } from 'src/app/Services/lenguaspoblacionetnica.service';
-import { SonidosImagenesAudiosService } from 'src/app/Services/materialmultimedia/sonidosimagenesaudios.service';
+
 
 @Component({
   selector: 'app-mapa-familias-etnicas',
@@ -20,8 +20,7 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
 
   constructor(
     private familiasService: FamiliasetnicasService,
-    private lenguasService: LenguaspoblacionetnicaService,
-    private multimediaService: SonidosImagenesAudiosService
+    private lenguasService: LenguaspoblacionetnicaService
   ) {}
 
   ngAfterViewInit(): void {
