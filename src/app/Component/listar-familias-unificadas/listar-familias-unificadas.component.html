@@ -2,8 +2,7 @@
 
   <div class="inner">
 
-    <!-- BOTÓN -->
-
+    <!-- 🔘 BOTÓN INICIO -->
     <div class="mb-3 text-end">
       <button class="btn-morado" routerLink="/listadopueblos">
         Volver a inicio
@@ -12,7 +11,7 @@
 
     <h3>Listado de familias lingüísticas</h3>
 
-    <!-- BUSCADOR -->
+    <!-- 🔎 BUSCADOR -->
     <input
       type="text"
       class="form-control mb-3"
@@ -21,13 +20,14 @@
       (input)="filtrar()"
     />
 
-    <!-- TABLA -->
+    <!-- 📋 TABLA -->
     <table class="table table-bordered table-hover">
 
       <thead class="table-dark">
         <tr>
           <th>#</th>
           <th>Familia Lingüística</th>
+          <th>Multimedia</th>
         </tr>
       </thead>
 
@@ -37,14 +37,21 @@
             [class.fila-blanca]="((paginaActual - 1) * registrosPorPagina + i) % 2 !== 0">
 
           <td>{{ (paginaActual - 1) * registrosPorPagina + i + 1 }}</td>
+
           <td>{{ f }}</td>
+
+          <td>
+            <button class="btn-morado" (click)="abrirMultimedia(f)">
+              🎭 Multimedia
+            </button>
+          </td>
 
         </tr>
       </tbody>
 
     </table>
 
-    <!-- PAGINACIÓN -->
+    <!-- 📄 PAGINACIÓN -->
     <div class="paginador">
 
       <button (click)="anterior()" [disabled]="paginaActual === 1">
@@ -57,6 +64,42 @@
         Siguiente ➡
       </button>
 
+    </div>
+
+  </div>
+
+</div>
+
+<!-- 🎭 MODAL MULTIMEDIA -->
+<div class="overlay" *ngIf="mostrarModal">
+
+  <div class="modal-box">
+
+    <button class="close" (click)="cerrarModal()">✖</button>
+
+    <h3>{{ multimediaFamilia }}</h3>
+
+    <!-- 🖼 IMÁGENES -->
+    <div class="lista">
+      <img *ngFor="let img of imagenes"
+           [src]="img"
+           class="mini-img" />
+    </div>
+
+    <!-- 🎧 AUDIOS -->
+    <div class="lista">
+      <audio *ngFor="let a of audios"
+             [src]="a"
+             controls></audio>
+    </div>
+
+    <!-- 🎬 VIDEOS -->
+    <div class="lista">
+      <video *ngFor="let v of videos"
+             [src]="v"
+             controls
+             class="video-preview">
+      </video>
     </div>
 
   </div>

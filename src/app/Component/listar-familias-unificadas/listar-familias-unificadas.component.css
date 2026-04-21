@@ -5,6 +5,7 @@
   padding: 20px;
 }
 
+/* 📦 CONTENEDOR */
 .inner {
   background: white;
   padding: 20px;
@@ -16,6 +17,21 @@ h3 {
   color: #4a148c;
 }
 
+/* 🔘 BOTÓN */
+.btn-morado {
+  background: #6a1b9a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-morado:hover {
+  background: #4a148c;
+}
+
+/* 📊 TABLA */
 .fila-morada {
   background-color: #6a1b9a;
   color: white;
@@ -29,6 +45,7 @@ h3 {
   background-color: #d1c4e9 !important;
 }
 
+/* 📄 PAGINACIÓN */
 .paginador {
   text-align: center;
   margin-top: 15px;
@@ -47,10 +64,58 @@ h3 {
   background: #ccc;
 }
 
-.btn-morado {
-  background: #6a1b9a;
+/* 🎭 OVERLAY */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20000;
+}
+
+/* 📦 MODAL */
+.modal-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 80%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  text-align: center;
+}
+
+/* ❌ X ROJA */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
   color: white;
   border: none;
-  padding: 8px 15px;
-  border-radius: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 🖼 IMÁGENES */
+.mini-img {
+  width: 120px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+/* 🎬 VIDEOS */
+.video-preview {
+  width: 200px;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+/* LISTA */
+.lista {
+  margin-top: 10px;
 }

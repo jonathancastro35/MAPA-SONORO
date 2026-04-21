@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FamiliasLingusticasUnificadasService } from 'src/app/Services/familias-lingusticas-unificadas.service';
+import { SonidosImagenesAudiosService } from 'src/app/Services/materialmultimedia/sonidosimagenesaudios.service';
 
 @Component({
   selector: 'app-listar-familias-unificadas',
@@ -8,22 +9,37 @@ import { FamiliasLingusticasUnificadasService } from 'src/app/Services/familias-
 })
 export class ListarFamiliasUnificadasComponent implements OnInit {
 
+  // 📌 LISTADO
   listarFamilias: string[] = [];
   listaFiltrada: string[] = [];
   datosPaginados: string[] = [];
 
+  // 📌 PAGINACIÓN
   paginaActual = 1;
   registrosPorPagina = 20;
   totalPaginas = 0;
 
+  // 📌 FILTRO
   filtro = '';
 
-  constructor(private service: FamiliasLingusticasUnificadasService) {}
+  // 📌 MODAL MULTIMEDIA
+  mostrarModal = false;
+  multimediaFamilia = '';
+
+  imagenes: string[] = [];
+  audios: string[] = [];
+  videos: string[] = [];
+
+  constructor(
+    private service: FamiliasLingusticasUnificadasService,
+    private multimediaService: SonidosImagenesAudiosService
+  ) {}
 
   ngOnInit(): void {
     this.cargarDatos();
   }
 
+  // 🔹 CARGAR FAMILIAS
   cargarDatos(): void {
     this.service.getFamiliasUnificadas().subscribe({
       next: (data: string[]) => {
@@ -35,6 +51,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     });
   }
 
+  // 🔹 FILTRO
   filtrar(): void {
     const valor = this.filtro.toLowerCase();
 
@@ -46,6 +63,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.calcularPaginacion();
   }
 
+  // 🔹 PAGINACIÓN
   calcularPaginacion(): void {
     this.totalPaginas = Math.ceil(this.listaFiltrada.length / this.registrosPorPagina);
     this.actualizarPagina();
@@ -70,5 +88,35 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
       this.paginaActual--;
       this.actualizarPagina();
     }
+  }
+
+  // 🎭 ABRIR MODAL MULTIMEDIA
+  abrirMultimedia(familia: string): void {
+
+    this.multimediaFamilia = familia;
+    this.mostrarModal = true;
+
+    // limpiar antes de cargar
+    this.imagenes = [];
+    this.audios = [];
+    this.videos = [];
+
+    this.multimediaService.getMaterial(familia, 'imagenes')
+      .subscribe(r => this.imagenes = r);
+
+    this.multimediaService.getMaterial(familia, 'audios')
+      .subscribe(r => this.audios = r);
+
+    this.multimediaService.getMaterial(familia, 'videos')
+      .subscribe(r => this.videos = r);
+  }
+
+  // ❌ CERRAR MODAL
+  cerrarModal(): void {
+    this.mostrarModal = false;
+
+    this.imagenes = [];
+    this.audios = [];
+    this.videos = [];
   }
 }
