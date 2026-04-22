@@ -382,8 +382,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/peba-yagua/img1.jpg",
+          "assets/imagenes/peba-yagua/img2.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -402,8 +402,9 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+         "assets/imagenes/maku-puinave/img1.jpg",
+          "assets/imagenes/maku-puinave/img2.jpg",
+          "assets/imagenes/maku-puinave/img3.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
