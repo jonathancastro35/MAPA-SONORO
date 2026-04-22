@@ -16,7 +16,6 @@ export class MultimediaComponent implements AfterViewInit {
 
   panelMultimedia = false;
 
-  // 🔥 IMPORTANTE: evitar valores vacíos peligrosos
   multimediaTipo: 'imagenes' | 'audios' | 'videos' = 'imagenes';
 
   imagenes: string[] = [];
@@ -132,7 +131,7 @@ export class MultimediaComponent implements AfterViewInit {
 
     if (tipo === 'audios') {
       this.multimediaService.getAudios(nombre)
-        .subscribe(r => this.audios = r);
+        .subscribe(r => this.audios = this.fixAudioList(r));
     }
 
     if (tipo === 'videos') {
@@ -153,11 +152,24 @@ export class MultimediaComponent implements AfterViewInit {
     this.imagenSeleccionada = null;
   }
 
+  // 🎧 FIX AUDIO (IMPORTANTE)
+  private fixAudioList(audios: string[]): string[] {
+    return audios.map(a => a + '?t=' + Date.now());
+  }
+
+  // 🎬 VIDEO YOUTUBE (YA BIEN)
   verVideo(video: string) {
-    this.videoSeleccionado = video;
+    const videoId = this.extractYouTubeId(video);
+    this.videoSeleccionado = `https://www.youtube.com/embed/${videoId}`;
   }
 
   cerrarVideo() {
     this.videoSeleccionado = null;
+  }
+
+  private extractYouTubeId(url: string): string {
+    const regExp = /(?:youtube\.com.*v=|youtu\.be\/)([^&?/]+)/;
+    const match = url.match(regExp);
+    return match ? match[1] : url;
   }
 }

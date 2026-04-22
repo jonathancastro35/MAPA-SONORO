@@ -1,6 +1,6 @@
 <div class="map-container">
 
-  <!-- 🔘 BOTONES (NO SE TOCAN) -->
+  <!-- BOTONES -->
   <div class="top-button">
 
     <button class="btn-morado" routerLink="/listadopueblos">
@@ -21,10 +21,10 @@
 
   </div>
 
-  <!-- 🗺 MAPA -->
+  <!-- MAPA -->
   <div id="map"></div>
 
-  <!-- 📂 PANEL -->
+  <!-- PANEL -->
   <div class="panel-multimedia" *ngIf="panelMultimedia">
 
     <div class="panel-header">
@@ -40,9 +40,13 @@
            (click)="verImagen(img)" />
     </div>
 
-    <!-- AUDIOS -->
+    <!-- AUDIOS (MEJORADO) -->
     <div *ngIf="multimediaTipo === 'audios'" class="lista">
-      <audio *ngFor="let a of audios" [src]="a" controls></audio>
+      <audio *ngFor="let a of audios"
+             [src]="a"
+             controls
+             preload="none">
+      </audio>
     </div>
 
     <!-- VIDEOS -->
@@ -56,7 +60,7 @@
 
   </div>
 
-  <!-- 🖼 IMAGEN MODAL -->
+  <!-- IMAGEN MODAL -->
   <div class="overlay" *ngIf="imagenSeleccionada">
     <div class="modal-box">
       <button class="close" (click)="cerrarPreview()">✖</button>
@@ -64,15 +68,21 @@
     </div>
   </div>
 
-  <!-- 🎬 VIDEO MODAL -->
+  <!-- VIDEO MODAL (YOUTUBE) -->
   <div class="overlay" *ngIf="videoSeleccionado">
     <div class="modal-box">
+
       <button class="close" (click)="cerrarVideo()">✖</button>
 
-      <video [src]="videoSeleccionado"
-             controls
-             autoplay>
-      </video>
+      <iframe
+        width="800"
+        height="450"
+        [src]="videoSeleccionado | safeUrl"
+        frameborder="0"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+
     </div>
   </div>
 
