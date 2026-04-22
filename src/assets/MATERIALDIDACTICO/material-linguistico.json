@@ -91,8 +91,10 @@
       "paises": ["Colombia", "Perú"],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/huitoto/img1.jpg",
+          "assets/imagenes/huitoto/img2.jpg",
+          "assets/imagenes/huitoto/img3.webp",
+          "assets/imagenes/huitoto/img4.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -193,8 +195,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/indoeuropea/img1.jpg",
+          "assets/imagenes/indoeuropea/img2.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
