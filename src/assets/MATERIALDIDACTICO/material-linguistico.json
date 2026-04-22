@@ -77,8 +77,8 @@
           "https://ejemplo.com/guahibo1.mp3"
         ],
         "videos": [
-          "https://www.youtube.com/watch?v=guahibo1",
-          "https://www.youtube.com/watch?v=guahibo2"
+          "https://youtu.be/E3rFlOmEyXA?si=Edwy6rPJwHLz_qKg",
+          "https://youtu.be/wZ5nlGyF8Rw?si=EgX7Q5AKTI3Tr4jP"
         ]
       }
     },
@@ -96,7 +96,11 @@
           "https://ejemplo.com/huitoto1.mp3"
         ],
         "videos": [
-          "https://www.youtube.com/watch?v=huitoto1"
+          "https://youtu.be/TA_TejqYaHo?si=X04ZaM9J5vdp7idI",
+          "https://youtu.be/56-gcjNa6ps?si=rbV5zU-O2BmTP2mF",
+          "https://youtu.be/adZUKrVc5XI?si=fsGxrxppQTvoZ5OI",
+          "https://youtu.be/hMgwhqn-4tM?si=i9WD5XSpNBMRVsu1",
+          "https://youtu.be/iAcUPsHHYa8?si=jjrqewYL9MRLTwdz"
         ]
       }
     },
@@ -178,6 +182,26 @@
           "https://youtu.be/N7L3qbX6Z_8?si=nhRyxW2ZhfbEt5DI",
           "https://youtu.be/r_Ly-o_VKR8?si=3UoYrUHt7PmDip43",
           "https://youtu.be/wx2gYE-h4HM?si=btKvs8TmRu9jltTd"
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "INDOEUROPEA",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/CahUXyNuFAA?si=abnurdbz7zGlCorP",
+          "https://youtu.be/YlAHeh8XSNg?si=rxyXeS6GhfG5s2bO",
+          "https://youtu.be/RpTuIHFIGqs?si=VJhsgv2svaPXL5Ep"
         ]
       }
     }
