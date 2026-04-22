@@ -371,6 +371,46 @@
           
         ]
       }
+    },
+    {
+      "id": 19,
+      "nombre": "PEBA- YAGUA",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/B3N1mMGufYE?si=9x1YPOcLD2y_yJQA",
+          "https://youtu.be/NCZ-4ahNrYw?si=wEkOh50f95cIqTvT"
+          
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "nombre": "MAKU-PUINAVE",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/Bmz6gZ0i3qw?si=WvQ2js5dOnFNsAri"
+          
+          
+        ]
+      }
     }
 
 
