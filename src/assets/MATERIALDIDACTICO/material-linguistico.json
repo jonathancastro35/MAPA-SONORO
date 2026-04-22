@@ -50,7 +50,8 @@
       "paises": ["Colombia", "Venezuela"],
       "recursos": {
         "imagenes": [
-          "https://img.lalr.co/cms/2017/07/07175655/Ind%C3%ADgenas-Arhuacos-Colprensa.jpg"
+          "assets/imagenes/chibcha/img1.jpg",
+          "assets/imagenes/chibcha/img2.jpg"
         ],
         "audios": [
           "https://ejemplo.com/arawawk1.mp3",
@@ -70,8 +71,9 @@
       "paises": ["Colombia", "Venezuela"],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/guahibo1.jpg",
-          "https://ejemplo.com/guahibo2.jpg"
+          "assets/imagenes/guahibo/img1.jpg",
+          "assets/imagenes/guahibo/img2.jpg",
+          "assets/imagenes/guahibo/img3.jpg"
         ],
         "audios": [
           "https://ejemplo.com/guahibo1.mp3"
@@ -112,8 +114,7 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/barbacoa/img1.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -132,8 +133,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/bora/img1.png"
+          
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -152,8 +153,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/caribe/img1.jpg",
+          "assets/imagenes/caribe/img2.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -172,8 +173,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/choco/img1.jpeg"
+          
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
