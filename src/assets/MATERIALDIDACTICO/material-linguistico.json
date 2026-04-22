@@ -259,8 +259,7 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/tucano-occidental/img1.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
