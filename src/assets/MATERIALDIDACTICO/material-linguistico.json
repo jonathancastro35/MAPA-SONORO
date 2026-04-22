@@ -279,8 +279,8 @@
       "paises": ["Colombia", "Perú"],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/uitoto/img1.jpg",
+          "assets/imagenes/uitoto/img2.webp"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -301,8 +301,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/tupi-guarani/img1.jpg",
+          "assets/imagenes/tupi-guarani/img2.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -323,8 +323,8 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+          "assets/imagenes/tupi/img1.jpg",
+          "assets/imagenes/tupi/img2.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
