@@ -57,7 +57,9 @@
           "https://ejemplo.com/arawawk2.mp3"
         ],
         "videos": [
-          "https://www.youtube.com/watch?v=arawawk1"
+          "https://youtu.be/RRHtloB5hH0?si=x9p1o5QqWfzOozd7",
+          "https://youtu.be/JTBM2ox--ag?si=FbUAZxcdE3MxK0JB",
+          "https://youtu.be/DtJcLXrmOaE?si=dyqzQeu9x8v4Rhy7"
         ]
       }
     },
@@ -97,6 +99,88 @@
           "https://www.youtube.com/watch?v=huitoto1"
         ]
       }
+    },
+  
+    {
+      "id": 6,
+      "nombre": "BARBACOANA",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/wupqGXXTgSY?si=UfiuE8R2OUOOJuAa",
+          "https://youtu.be/3DAsqdxhF5I?si=E-qI97bJszo7TLXA",
+          "https://youtu.be/TvS6Gu9CcsA?si=53urQaRc7SnYVAIR"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "BORA",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/H0PFdQHP2k4?si=FJXOxOC4PphOZ5NE",
+          "https://youtu.be/gK8Cb2OmrR4?si=qIfgPE7AXgyMYYh0",
+          "https://youtu.be/YfCYTgi2mLY?si=v3-mHyOcrkHOfxYg"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "CARIBE",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/RRHtloB5hH0?si=x9p1o5QqWfzOozd7",
+          "https://youtu.be/nIOtWafBNMU?si=PetvqUC3mbFHpG6T",
+          "https://youtu.be/GWyVQj74nnM?si=zsFERKu3e7twzlsE"
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "CHOCO",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/N7L3qbX6Z_8?si=nhRyxW2ZhfbEt5DI",
+          "https://youtu.be/r_Ly-o_VKR8?si=3UoYrUHt7PmDip43",
+          "https://youtu.be/wx2gYE-h4HM?si=btKvs8TmRu9jltTd"
+        ]
+      }
     }
+
   ]
 }
