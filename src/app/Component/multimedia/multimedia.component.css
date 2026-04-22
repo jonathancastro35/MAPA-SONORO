@@ -4,14 +4,13 @@
   position: relative;
 }
 
-/* 🔥 IMPORTANTE: MAPA DEBE TENER ALTURA REAL */
 #map {
   width: 100%;
-  height: 100vh;   /* 👈 CLAVE PARA QUE NO SALGA EN BLANCO */
+  height: 100vh;
   z-index: 1;
 }
 
-/* 🔘 BOTONES */
+/* BOTONES */
 .top-button {
   position: absolute;
   top: 15px;
@@ -45,7 +44,6 @@
   padding: 12px;
 }
 
-/* LISTA */
 .lista {
   display: flex;
   flex-direction: column;
@@ -71,6 +69,13 @@
   cursor: pointer;
 }
 
+/* EMPTY */
+.empty {
+  text-align: center;
+  color: gray;
+  margin-top: 10px;
+}
+
 /* OVERLAY */
 .overlay {
   position: fixed;
@@ -82,7 +87,6 @@
   z-index: 20000;
 }
 
-/* MODAL */
 .modal-box {
   position: relative;
   display: flex;
@@ -97,7 +101,6 @@
   border-radius: 10px;
 }
 
-/* ❌ X ROJA SIEMPRE ARRIBA DEL MODAL */
 .close {
   position: absolute;
   top: 10px;

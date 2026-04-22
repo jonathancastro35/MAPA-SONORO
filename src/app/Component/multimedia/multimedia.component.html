@@ -32,7 +32,7 @@
       <button class="close" (click)="cerrarMultimedia()">✖</button>
     </div>
 
-    <!-- IMÁGENES -->
+    <!-- 🖼 IMÁGENES -->
     <div *ngIf="multimediaTipo === 'imagenes'" class="lista">
       <img *ngFor="let img of imagenes"
            [src]="img"
@@ -40,22 +40,17 @@
            (click)="verImagen(img)" />
     </div>
 
-    <!-- AUDIOS (MEJORADO) -->
-    <div *ngIf="multimediaTipo === 'audios'" class="lista">
-      <audio *ngFor="let a of audios"
-             [src]="a"
-             controls
-             preload="none">
-      </audio>
-    </div>
-
-    <!-- VIDEOS -->
+    <!-- 🎬 VIDEOS -->
     <div *ngIf="multimediaTipo === 'videos'" class="lista">
       <div *ngFor="let v of videos"
            class="video-card"
            (click)="verVideo(v)">
         🎬 Ver video
       </div>
+
+      <p *ngIf="videos.length === 0" class="empty">
+        No hay videos disponibles
+      </p>
     </div>
 
   </div>
@@ -68,7 +63,7 @@
     </div>
   </div>
 
-  <!-- VIDEO MODAL (YOUTUBE) -->
+  <!-- VIDEO MODAL -->
   <div class="overlay" *ngIf="videoSeleccionado">
     <div class="modal-box">
 

@@ -16,10 +16,10 @@ export class MultimediaComponent implements AfterViewInit {
 
   panelMultimedia = false;
 
-  multimediaTipo: 'imagenes' | 'audios' | 'videos' = 'imagenes';
+  // 🔵 SOLO IMÁGENES Y VIDEOS EN UI
+  multimediaTipo: 'imagenes' | 'videos' = 'imagenes';
 
   imagenes: string[] = [];
-  audios: string[] = [];
   videos: string[] = [];
 
   imagenSeleccionada: string | null = null;
@@ -81,7 +81,6 @@ export class MultimediaComponent implements AfterViewInit {
               <div><strong>${familia}</strong></div>
 
               <button id="img">🖼 Imágenes</button>
-              <button id="aud">🎧 Audios</button>
               <button id="vid">🎬 Videos</button>
             </div>
           `);
@@ -92,10 +91,6 @@ export class MultimediaComponent implements AfterViewInit {
 
             popup.querySelector('#img')?.addEventListener('click', () => {
               this.loadMedia(familia, 'imagenes');
-            });
-
-            popup.querySelector('#aud')?.addEventListener('click', () => {
-              this.loadMedia(familia, 'audios');
             });
 
             popup.querySelector('#vid')?.addEventListener('click', () => {
@@ -113,7 +108,7 @@ export class MultimediaComponent implements AfterViewInit {
     });
   }
 
-  loadMedia(familia: string, tipo: 'imagenes' | 'audios' | 'videos') {
+  loadMedia(familia: string, tipo: 'imagenes' | 'videos') {
 
     const nombre = familia.toUpperCase();
 
@@ -121,17 +116,11 @@ export class MultimediaComponent implements AfterViewInit {
     this.multimediaTipo = tipo;
 
     this.imagenes = [];
-    this.audios = [];
     this.videos = [];
 
     if (tipo === 'imagenes') {
       this.multimediaService.getImagenes(nombre)
         .subscribe(r => this.imagenes = r);
-    }
-
-    if (tipo === 'audios') {
-      this.multimediaService.getAudios(nombre)
-        .subscribe(r => this.audios = this.fixAudioList(r));
     }
 
     if (tipo === 'videos') {
@@ -152,12 +141,6 @@ export class MultimediaComponent implements AfterViewInit {
     this.imagenSeleccionada = null;
   }
 
-  // 🎧 FIX AUDIO (IMPORTANTE)
-  private fixAudioList(audios: string[]): string[] {
-    return audios.map(a => a + '?t=' + Date.now());
-  }
-
-  // 🎬 VIDEO YOUTUBE (YA BIEN)
   verVideo(video: string) {
     const videoId = this.extractYouTubeId(video);
     this.videoSeleccionado = `https://www.youtube.com/embed/${videoId}`;

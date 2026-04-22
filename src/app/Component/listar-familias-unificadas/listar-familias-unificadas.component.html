@@ -1,3 +1,4 @@
+<!-- LISTADO -->
 <div class="container wrapper">
 
   <div class="inner">
@@ -51,7 +52,7 @@
   </div>
 </div>
 
-<!-- 🎭 MODAL -->
+<!-- MODAL MULTIMEDIA -->
 <div class="overlay" *ngIf="mostrarModal">
 
   <div class="modal-box">
@@ -60,7 +61,7 @@
 
     <h3>{{ multimediaFamilia }}</h3>
 
-    <!-- IMÁGENES -->
+    <!-- 🖼 IMÁGENES -->
     <div class="lista">
       <img *ngFor="let img of imagenes"
            [src]="img"
@@ -68,12 +69,7 @@
            (click)="verImagen(img)" />
     </div>
 
-    <!-- AUDIOS -->
-    <div class="lista">
-      <audio *ngFor="let a of audios" [src]="a" controls></audio>
-    </div>
-
-    <!-- VIDEOS -->
+    <!-- 🎬 VIDEOS -->
     <div class="lista">
       <div *ngFor="let v of videos"
            class="video-card"
@@ -93,7 +89,7 @@
   </div>
 </div>
 
-<!-- 🎬 VIDEO YOUTUBE -->
+<!-- VIDEO -->
 <div class="overlay" *ngIf="videoSeleccionado">
   <div class="modal-box">
 

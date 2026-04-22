@@ -24,7 +24,6 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
   multimediaFamilia = '';
 
   imagenes: string[] = [];
-  audios: string[] = [];
   videos: string[] = [];
 
   // previews
@@ -85,21 +84,17 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     }
   }
 
-  // multimedia
+  // 🎭 multimedia
   abrirMultimedia(familia: string): void {
 
     this.multimediaFamilia = familia;
     this.mostrarModal = true;
 
     this.imagenes = [];
-    this.audios = [];
     this.videos = [];
 
     this.multimediaService.getMaterial(familia, 'imagenes')
       .subscribe(r => this.imagenes = r);
-
-    this.multimediaService.getMaterial(familia, 'audios')
-      .subscribe(r => this.audios = r);
 
     this.multimediaService.getMaterial(familia, 'videos')
       .subscribe(r => this.videos = r);
@@ -109,6 +104,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.mostrarModal = false;
   }
 
+  // 🖼 imagen
   verImagen(img: string) {
     this.imagenSeleccionada = img;
   }
@@ -117,7 +113,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.imagenSeleccionada = null;
   }
 
-  // 🔥 VIDEO (YOUTUBE FIX)
+  // 🎬 video YouTube
   verVideo(v: string) {
     const videoId = this.extractYouTubeId(v);
     this.videoSeleccionado = `https://www.youtube.com/embed/${videoId}`;
