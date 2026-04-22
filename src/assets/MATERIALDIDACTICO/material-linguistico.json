@@ -1,25 +1,6 @@
 {
   "Material_linguistico": [
-    {
-      "id": 1,
-      "nombre": "AISLADA",
-      "descripcion": "Lenguas sin parentesco comprobado con otras familias lingüísticas conocidas.",
-      "paises": ["Colombia"],
-      "recursos": {
-        "imagenes": [
-          "https://ejemplo.com/aislada1.jpg",
-          "https://ejemplo.com/aislada2.jpg"
-        ],
-        "audios": [
-          "https://ejemplo.com/aislada1.mp3",
-          "https://ejemplo.com/aislada2.mp3"
-        ],
-        "videos": [
-          "https://www.youtube.com/watch?v=videoA",
-          "https://www.youtube.com/watch?v=videoB"
-        ]
-      }
-    },
+
     {
       "id": 2,
       "nombre": "ARAWAK",
@@ -29,11 +10,10 @@
         "imagenes": [
           "https://img.lalr.co/cms/2017/07/07175655/Ind%C3%ADgenas-Arhuacos-Colprensa.jpg",
           "https://pueblosindigenas.es/wp-content/uploads/2019/11/cultura-Arahuacos.jpg"
-          
+
         ],
         "audios": [
-          "https://youtu.be/t0tHTgjtTTs?si=mWWIQrelAbwCW3OR",
-          "https://youtu.be/arawak2?si=647BbQHW2mR6tvIG"
+
         ],
         "videos": [
           "https://youtu.be/L_jUZSXUD18?si=MMwnLZntDqqyW0Ng",
@@ -54,8 +34,7 @@
           "assets/imagenes/chibcha/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/arawawk1.mp3",
-          "https://ejemplo.com/arawawk2.mp3"
+
         ],
         "videos": [
           "https://youtu.be/RRHtloB5hH0?si=x9p1o5QqWfzOozd7",
@@ -76,7 +55,7 @@
           "assets/imagenes/guahibo/img3.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/guahibo1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/E3rFlOmEyXA?si=Edwy6rPJwHLz_qKg",
@@ -97,7 +76,7 @@
           "assets/imagenes/huitoto/img4.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/TA_TejqYaHo?si=X04ZaM9J5vdp7idI",
@@ -108,7 +87,7 @@
         ]
       }
     },
-  
+
     {
       "id": 6,
       "nombre": "BARBACOANA",
@@ -119,7 +98,7 @@
           "assets/imagenes/barbacoa/img1.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/wupqGXXTgSY?si=UfiuE8R2OUOOJuAa",
@@ -136,10 +115,10 @@
       "recursos": {
         "imagenes": [
           "assets/imagenes/bora/img1.png"
-          
+
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/H0PFdQHP2k4?si=FJXOxOC4PphOZ5NE",
@@ -159,7 +138,7 @@
           "assets/imagenes/caribe/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/RRHtloB5hH0?si=x9p1o5QqWfzOozd7",
@@ -176,10 +155,10 @@
       "recursos": {
         "imagenes": [
           "assets/imagenes/choco/img1.jpeg"
-          
+
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/N7L3qbX6Z_8?si=nhRyxW2ZhfbEt5DI",
@@ -199,7 +178,7 @@
           "assets/imagenes/indoeuropea/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/CahUXyNuFAA?si=abnurdbz7zGlCorP",
@@ -220,7 +199,7 @@
           "assets/imagenes/quechua/img3.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/vMq94DzpymY?si=tPoVuzKckd60wM8J",
@@ -242,13 +221,13 @@
           "assets/imagenes/saliba-piaroa/img3.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/86MbXvZUhCw?si=ezSlhgmLjFLE_DmX",
           "https://youtu.be/tpmcZXg0dHw?si=B60Qzh-aLwHamRUV",
           "https://youtu.be/AitfmqlB1Z4?si=SYVwQA7k29vmv1vx"
-          
+
         ]
       }
     },
@@ -262,13 +241,13 @@
           "assets/imagenes/tucano-occidental/img1.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/-KlrPSCr3Kw?si=UqPcVdELRp7Ikt-y",
           "https://youtu.be/HlkCtNUhLxg?si=lWVAFpHUF6TM65oh",
           "https://youtu.be/PZs9OLZwUK4?si=GnlK3xgAyNTyOpPb"
-          
+
         ]
       }
     },
@@ -283,7 +262,7 @@
           "assets/imagenes/uitoto/img2.webp"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/TA_TejqYaHo?si=X04ZaM9J5vdp7idI",
@@ -305,14 +284,14 @@
           "assets/imagenes/tupi-guarani/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/9480H6r4pEI?si=Bt9WCq5nnC3AYomq",
           "https://youtu.be/o7ovFFNurUQ?si=GpIQGe0skPtvA9y5",
           "https://youtu.be/EvwFGaTKZy0?si=gfsiNiIbFCqpp7UC",
           "https://youtu.be/YWRDIj5Fjdo?si=7TGNeZj_qUDWubXE"
-          
+
         ]
       }
     },
@@ -327,12 +306,12 @@
           "assets/imagenes/tupi/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/ppaBMZHaDe4?si=G8S2omJQNwlh9mMF"
-          
-          
+
+
         ]
       }
     },
@@ -347,12 +326,12 @@
           "assets/imagenes/tukano-oriental/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/bQ1JW3rO3wQ?si=bRzj8cYFV0ofOqil"
-          
-          
+
+
         ]
       }
     },
@@ -367,12 +346,12 @@
           "assets/imagenes/tukano/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/iyBm0NYfHtw?si=JWFXc7rnTVDv_06e"
-          
-          
+
+
         ]
       }
     },
@@ -387,12 +366,12 @@
           "assets/imagenes/peba-yagua/img2.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/B3N1mMGufYE?si=9x1YPOcLD2y_yJQA",
           "https://youtu.be/NCZ-4ahNrYw?si=wEkOh50f95cIqTvT"
-          
+
         ]
       }
     },
@@ -408,18 +387,18 @@
           "assets/imagenes/maku-puinave/img3.jpg"
         ],
         "audios": [
-          "https://ejemplo.com/huitoto1.mp3"
+
         ],
         "videos": [
           "https://youtu.be/Bmz6gZ0i3qw?si=WvQ2js5dOnFNsAri"
-          
-          
+
+
         ]
       }
     }
 
 
-      
+
 
 
   ]
