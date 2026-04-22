@@ -204,7 +204,93 @@
           "https://youtu.be/RpTuIHFIGqs?si=VJhsgv2svaPXL5Ep"
         ]
       }
+    },
+    {
+      "id": 11,
+      "nombre": "QUECHUA",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/vMq94DzpymY?si=tPoVuzKckd60wM8J",
+          "https://youtu.be/RU5dTEU9seE?si=vb-SpCIV4LcA6m4P",
+          "https://youtu.be/A_Ul7DtwUCs?si=HNBvXc_x385wkOSG",
+          "https://youtu.be/ZhVk3-jD31U?si=z8kTQIatqrVK2WMh"
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "SALIBA - PIAROA",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/86MbXvZUhCw?si=ezSlhgmLjFLE_DmX",
+          "https://youtu.be/tpmcZXg0dHw?si=B60Qzh-aLwHamRUV",
+          "https://youtu.be/AitfmqlB1Z4?si=SYVwQA7k29vmv1vx"
+          
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "TUCANO OCCIDENTAL",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/-KlrPSCr3Kw?si=UqPcVdELRp7Ikt-y",
+          "https://youtu.be/HlkCtNUhLxg?si=lWVAFpHUF6TM65oh",
+          "https://youtu.be/PZs9OLZwUK4?si=GnlK3xgAyNTyOpPb"
+          
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "nombre": "UITOTO",
+      "descripcion": "Familia lingüística amazónica con varias lenguas en Colombia y Perú.",
+      "paises": ["Colombia", "Perú"],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/TA_TejqYaHo?si=X04ZaM9J5vdp7idI",
+          "https://youtu.be/56-gcjNa6ps?si=rbV5zU-O2BmTP2mF",
+          "https://youtu.be/adZUKrVc5XI?si=fsGxrxppQTvoZ5OI",
+          "https://youtu.be/hMgwhqn-4tM?si=i9WD5XSpNBMRVsu1",
+          "https://youtu.be/iAcUPsHHYa8?si=jjrqewYL9MRLTwdz"
+        ]
+      }
     }
+
 
   ]
 }
