@@ -2,7 +2,6 @@
 
   <div class="inner">
 
-    <!-- 🔘 BOTÓN VOLVER (NO TOCAR) -->
     <div class="mb-3 text-end">
       <button class="btn-morado" routerLink="/listadopueblos">
         Volver a inicio
@@ -11,13 +10,11 @@
 
     <h3>Listado de familias lingüísticas</h3>
 
-    <!-- 🔎 BUSCADOR -->
     <input class="form-control mb-3"
            [(ngModel)]="filtro"
            (input)="filtrar()"
            placeholder="Buscar..." />
 
-    <!-- 📋 TABLA -->
     <table class="table table-bordered table-hover">
 
       <thead class="table-dark">
@@ -45,7 +42,6 @@
 
     </table>
 
-    <!-- 📄 PAGINACIÓN -->
     <div class="paginador">
       <button (click)="anterior()" [disabled]="paginaActual === 1">⬅</button>
       <span>{{ paginaActual }} / {{ totalPaginas }}</span>
@@ -64,7 +60,7 @@
 
     <h3>{{ multimediaFamilia }}</h3>
 
-    <!-- 🖼 IMÁGENES -->
+    <!-- IMÁGENES -->
     <div class="lista">
       <img *ngFor="let img of imagenes"
            [src]="img"
@@ -72,12 +68,12 @@
            (click)="verImagen(img)" />
     </div>
 
-    <!-- 🎧 AUDIOS -->
+    <!-- AUDIOS -->
     <div class="lista">
       <audio *ngFor="let a of audios" [src]="a" controls></audio>
     </div>
 
-    <!-- 🎬 VIDEOS -->
+    <!-- VIDEOS -->
     <div class="lista">
       <div *ngFor="let v of videos"
            class="video-card"
@@ -89,7 +85,7 @@
   </div>
 </div>
 
-<!-- 🖼 IMAGE PREVIEW -->
+<!-- IMAGEN -->
 <div class="overlay" *ngIf="imagenSeleccionada">
   <div class="modal-box">
     <button class="close" (click)="cerrarImagen()">✖</button>
@@ -97,15 +93,20 @@
   </div>
 </div>
 
-<!-- 🎬 VIDEO PREVIEW -->
+<!-- 🎬 VIDEO YOUTUBE -->
 <div class="overlay" *ngIf="videoSeleccionado">
   <div class="modal-box">
+
     <button class="close" (click)="cerrarVideo()">✖</button>
 
-    <video [src]="videoSeleccionado"
-           controls
-           autoplay>
-    </video>
+    <iframe
+      width="100%"
+      height="400"
+      [src]="videoSeleccionado | safeUrl"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
 
   </div>
 </div>

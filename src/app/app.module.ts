@@ -15,6 +15,7 @@ import { ListarFamiliasUnificadasComponent } from './Component/listar-familias-u
 import { ListarPueblosDetalleComponent } from './Component/listar-pueblos-detalle/listar-pueblos-detalle.component';
 //import { MultimediaComponent } from './Component/multimedia/multimedia.component';
 import { MultimediaComponent } from './Component/multimedia/multimedia.component';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 
 
@@ -25,7 +26,8 @@ import { MultimediaComponent } from './Component/multimedia/multimedia.component
     ListarPueblosUnificadosComponent,
     ListarFamiliasUnificadasComponent,
     ListarPueblosDetalleComponent,
-    MultimediaComponent
+    MultimediaComponent,
+    SafeUrlPipe
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
 
   filtro = '';
 
-  // 🎭 modal multimedia
+  // modal multimedia
   mostrarModal = false;
   multimediaFamilia = '';
 
@@ -27,7 +27,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
   audios: string[] = [];
   videos: string[] = [];
 
-  // 🖼 / 🎬 preview
+  // previews
   imagenSeleccionada: string | null = null;
   videoSeleccionado: string | null = null;
 
@@ -85,7 +85,7 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     }
   }
 
-  // 🎭 abrir modal multimedia
+  // multimedia
   abrirMultimedia(familia: string): void {
 
     this.multimediaFamilia = familia;
@@ -109,7 +109,6 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.mostrarModal = false;
   }
 
-  // 🖼 preview imagen
   verImagen(img: string) {
     this.imagenSeleccionada = img;
   }
@@ -118,12 +117,19 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.imagenSeleccionada = null;
   }
 
-  // 🎬 preview video
+  // 🔥 VIDEO (YOUTUBE FIX)
   verVideo(v: string) {
-    this.videoSeleccionado = v;
+    const videoId = this.extractYouTubeId(v);
+    this.videoSeleccionado = `https://www.youtube.com/embed/${videoId}`;
   }
 
   cerrarVideo() {
     this.videoSeleccionado = null;
+  }
+
+  private extractYouTubeId(url: string): string {
+    const regExp = /(?:youtube\.com.*v=|youtu\.be\/)([^&?/]+)/;
+    const match = url.match(regExp);
+    return match ? match[1] : url;
   }
 }
