@@ -215,8 +215,9 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+           "assets/imagenes/quechua/img1.jpg",
+          "assets/imagenes/quechua/img2.jpg",
+          "assets/imagenes/quechua/img3.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
@@ -236,8 +237,9 @@
       "paises": ["", ""],
       "recursos": {
         "imagenes": [
-          "https://ejemplo.com/huitoto1.jpg",
-          "https://ejemplo.com/huitoto2.jpg"
+           "assets/imagenes/saliba-piaroa/img1.jpg",
+          "assets/imagenes/saliba-piaroa/img2.jpg",
+          "assets/imagenes/saliba-piaroa/img3.jpg"
         ],
         "audios": [
           "https://ejemplo.com/huitoto1.mp3"
