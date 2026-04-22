@@ -289,7 +289,92 @@
           "https://youtu.be/iAcUPsHHYa8?si=jjrqewYL9MRLTwdz"
         ]
       }
+    },
+    {
+      "id": 15,
+      "nombre": "TUPI-GUARANI",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/9480H6r4pEI?si=Bt9WCq5nnC3AYomq",
+          "https://youtu.be/o7ovFFNurUQ?si=GpIQGe0skPtvA9y5",
+          "https://youtu.be/EvwFGaTKZy0?si=gfsiNiIbFCqpp7UC",
+          "https://youtu.be/YWRDIj5Fjdo?si=7TGNeZj_qUDWubXE"
+          
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "nombre": "TUPI",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/ppaBMZHaDe4?si=G8S2omJQNwlh9mMF"
+          
+          
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "nombre": "TUKANO ORIENTAL",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/bQ1JW3rO3wQ?si=bRzj8cYFV0ofOqil"
+          
+          
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "nombre": "TUKANO",
+      "descripcion": "NINGUNA",
+      "paises": ["", ""],
+      "recursos": {
+        "imagenes": [
+          "https://ejemplo.com/huitoto1.jpg",
+          "https://ejemplo.com/huitoto2.jpg"
+        ],
+        "audios": [
+          "https://ejemplo.com/huitoto1.mp3"
+        ],
+        "videos": [
+          "https://youtu.be/iyBm0NYfHtw?si=JWFXc7rnTVDv_06e"
+          
+          
+        ]
+      }
     }
+
+
+      
 
 
   ]
