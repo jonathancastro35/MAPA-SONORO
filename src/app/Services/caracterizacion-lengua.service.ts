@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 export class CaracterizacionLenguaService {
 
   // 1. ruta del JSON
-  private jsonUrl = 'assets/materialpoblacion/Caracterizacionlenguasnativa.json';
+  private jsonUrl = '/assets/materialpoblacion/Caracterizacionlenguasnativa.json';
 
   // 2. inyección
   constructor(private http: HttpClient) {}

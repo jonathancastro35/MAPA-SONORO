@@ -8,8 +8,8 @@ import { Observable, map, forkJoin } from 'rxjs';
 export class FamiliasLingusticasUnificadasService {
 
   // 🔹 rutas de datos
-  private urlCaracterizacion = 'assets/materialpoblacion/Caracterizacionlenguasnativa.json';
-  private urlGeoJson = 'assets/materialpoblacion/Familias.geojson';
+  private urlCaracterizacion = '/assets/materialpoblacion/Caracterizacionlenguasnativa.json';
+  private urlGeoJson = '/assets/materialpoblacion/Familias.geojson';
 
   constructor(private http: HttpClient) {}
 

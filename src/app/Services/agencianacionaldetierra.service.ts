@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
 })
 export class AgencianacionaldetierraService {
 
-  private url = 'assets/data-ant/prueba.json';
+  private url = '/assets/data-ant/prueba.json';
 
   constructor(private http: HttpClient) {}
 

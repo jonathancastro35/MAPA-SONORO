@@ -31,7 +31,14 @@ export class ListarPueblosDetalleComponent implements OnInit {
         this.listaFiltrada = [...this.lista];
         this.calcularPaginacion();
       },
-      error: (err) => console.error('Error:', err)
+      error: (err) => {
+        console.error('❌ Error cargando pueblos detalle:', err);
+
+        // evita pantalla vacía silenciosa
+        this.lista = [];
+        this.listaFiltrada = [];
+        this.datosPaginados = [];
+      }
     });
   }
 

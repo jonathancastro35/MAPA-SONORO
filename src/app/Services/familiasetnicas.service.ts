@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
 })
 export class FamiliasetnicasService {
 
-  private basePath = 'assets/materialpoblacion/';
+  private basePath = '/assets/materialpoblacion/';
   private url = this.basePath + 'Familias.geojson';
 
   constructor(private http: HttpClient) {}

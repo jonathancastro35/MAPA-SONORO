@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
 })
 export class SonidosImagenesAudiosService {
 
-  private url = 'assets/MATERIALDIDACTICO/material-linguistico.json';
+  private url = '/assets/MATERIALDIDACTICO/material-linguistico.json';
 
   constructor(private http: HttpClient) {}
 

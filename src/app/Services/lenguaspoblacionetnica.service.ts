@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
 })
 export class LenguaspoblacionetnicaService {
 
-  private url = 'assets/materialpoblacion/Lenguas.json';
+  private url = '/assets/materialpoblacion/Lenguas.json';
 
   constructor(private http: HttpClient) {}
 

@@ -16,7 +16,6 @@ export class MultimediaComponent implements AfterViewInit {
 
   panelMultimedia = false;
 
-  // 🔵 SOLO IMÁGENES Y VIDEOS EN UI
   multimediaTipo: 'imagenes' | 'videos' = 'imagenes';
 
   imagenes: string[] = [];
@@ -62,49 +61,53 @@ export class MultimediaComponent implements AfterViewInit {
 
   private cargarFamilias(): void {
 
-    this.familiasService.getAll().subscribe(data => {
+    this.familiasService.getAll().subscribe({
+      next: (data) => {
 
-      const geoJsonLayer = L.geoJSON(data, {
+        const geoJsonLayer = L.geoJSON(data, {
 
-        style: (feature) => ({
-          color: this.getColor(feature?.properties?.Familia),
-          weight: 2,
-          fillOpacity: 0.4
-        }),
+          style: (feature) => ({
+            color: this.getColor(feature?.properties?.Familia),
+            weight: 2,
+            fillOpacity: 0.4
+          }),
 
-        onEachFeature: (feature, layer) => {
+          onEachFeature: (feature, layer) => {
 
-          const familia = feature?.properties?.Familia ?? 'SIN FAMILIA';
+            const familia = feature?.properties?.Familia ?? 'SIN FAMILIA';
 
-          layer.bindPopup(`
-            <div>
-              <div><strong>${familia}</strong></div>
+            layer.bindPopup(`
+              <div>
+                <div><strong>${familia}</strong></div>
+                <button id="img">🖼 Imágenes</button>
+                <button id="vid">🎬 Videos</button>
+              </div>
+            `);
 
-              <button id="img">🖼 Imágenes</button>
-              <button id="vid">🎬 Videos</button>
-            </div>
-          `);
+            layer.on('popupopen', (e: any) => {
 
-          layer.on('popupopen', (e: any) => {
+              const popup = e.popup._contentNode;
 
-            const popup = e.popup._contentNode;
+              popup.querySelector('#img')?.addEventListener('click', () => {
+                this.loadMedia(familia, 'imagenes');
+              });
 
-            popup.querySelector('#img')?.addEventListener('click', () => {
-              this.loadMedia(familia, 'imagenes');
+              popup.querySelector('#vid')?.addEventListener('click', () => {
+                this.loadMedia(familia, 'videos');
+              });
             });
+          }
+        });
 
-            popup.querySelector('#vid')?.addEventListener('click', () => {
-              this.loadMedia(familia, 'videos');
-            });
-          });
-        }
-      });
+        geoJsonLayer.addTo(this.map);
 
-      geoJsonLayer.addTo(this.map);
-
-      setTimeout(() => {
-        this.map.fitBounds(geoJsonLayer.getBounds());
-      }, 0);
+        setTimeout(() => {
+          this.map.fitBounds(geoJsonLayer.getBounds());
+        }, 0);
+      },
+      error: (err) => {
+        console.error('❌ Error cargando familias en mapa:', err);
+      }
     });
   }
 
@@ -119,13 +122,17 @@ export class MultimediaComponent implements AfterViewInit {
     this.videos = [];
 
     if (tipo === 'imagenes') {
-      this.multimediaService.getImagenes(nombre)
-        .subscribe(r => this.imagenes = r);
+      this.multimediaService.getImagenes(nombre).subscribe({
+        next: (r) => this.imagenes = r,
+        error: (err) => console.error('❌ Error imágenes:', err)
+      });
     }
 
     if (tipo === 'videos') {
-      this.multimediaService.getVideos(nombre)
-        .subscribe(r => this.videos = r);
+      this.multimediaService.getVideos(nombre).subscribe({
+        next: (r) => this.videos = r,
+        error: (err) => console.error('❌ Error videos:', err)
+      });
     }
   }
 

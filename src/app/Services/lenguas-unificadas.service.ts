@@ -29,7 +29,7 @@ interface DANEItem {
 export class LenguasUnificadasService {
 
   // 🔹 DANE
-  private jsonUrl = 'assets/materialpoblacion/Lenguas_indigenas_2018_1_DANE.json';
+  private jsonUrl = '/assets/materialpoblacion/Lenguas_indigenas_2018_1_DANE.json';
 
   constructor(
     private http: HttpClient,

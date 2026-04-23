@@ -7,7 +7,7 @@ import { Observable, map } from 'rxjs';
 })
 export class MunicipiosantService {
 
-  private url = 'assets/data-ant/municipios.json';
+  private url = '/assets/data-ant/municipios.json';
 
   constructor(private http: HttpClient) {}
 

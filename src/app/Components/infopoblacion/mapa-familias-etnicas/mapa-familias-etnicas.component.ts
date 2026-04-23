@@ -4,7 +4,6 @@ import * as L from 'leaflet';
 import { FamiliasetnicasService } from 'src/app/Services/familiasetnicas.service';
 import { LenguaspoblacionetnicaService } from 'src/app/Services/lenguaspoblacionetnica.service';
 
-
 @Component({
   selector: 'app-mapa-familias-etnicas',
   templateUrl: './mapa-familias-etnicas.component.html',
@@ -38,7 +37,6 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
     this.layer.addTo(this.map);
   }
 
-  // 🎨 COLORES POR FAMILIA
   private colores: any = {
     'Chibcha': '#e74c3c',
     'Arawak': '#3498db',
@@ -56,44 +54,50 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
 
   private cargarFamilias(): void {
 
-    this.familiasService.getAll().subscribe(data => {
+    this.familiasService.getAll().subscribe({
+      next: (data) => {
 
-      const geoJsonLayer = L.geoJSON(data, {
+        const geoJsonLayer = L.geoJSON(data, {
 
-        style: (feature) => {
-          const familia = feature?.properties?.Familia;
-          return {
-            color: this.getColor(familia),
-            weight: 2,
-            fillOpacity: 0.4
-          };
-        },
+          style: (feature) => {
+            const familia = feature?.properties?.Familia;
+            return {
+              color: this.getColor(familia),
+              weight: 2,
+              fillOpacity: 0.4
+            };
+          },
 
-        onEachFeature: (feature, layer) => {
+          onEachFeature: (feature, layer) => {
 
-          const familia = feature?.properties?.Familia ?? 'Sin familia';
+            const familia = feature?.properties?.Familia ?? 'Sin familia';
 
-          layer.bindPopup(`
-            <div class="popup-card">
-              <div class="popup-header">🌿 Familia lingüística</div>
-              <div class="popup-title">${familia}</div>
-              <button class="popup-btn">Ver pueblos</button>
-            </div>
-          `);
+            layer.bindPopup(`
+              <div class="popup-card">
+                <div class="popup-header">🌿 Familia lingüística</div>
+                <div class="popup-title">${familia}</div>
+                <button class="popup-btn">Ver pueblos</button>
+              </div>
+            `);
 
-          layer.on('popupopen', (e: any) => {
-            const popup = e.popup._contentNode;
-            const btn = popup.querySelector('.popup-btn');
+            layer.on('popupopen', (e: any) => {
 
-            if (btn) {
-              btn.onclick = () => this.verLenguas(familia);
-            }
-          });
-        }
-      });
+              const popup = e.popup._contentNode;
+              const btn = popup.querySelector('.popup-btn');
 
-      geoJsonLayer.addTo(this.map);
-      this.map.fitBounds(geoJsonLayer.getBounds());
+              if (btn) {
+                btn.onclick = () => this.verLenguas(familia);
+              }
+            });
+          }
+        });
+
+        geoJsonLayer.addTo(this.map);
+        this.map.fitBounds(geoJsonLayer.getBounds());
+      },
+      error: (err) => {
+        console.error('❌ Error cargando familias en mapa:', err);
+      }
     });
   }
 
@@ -102,16 +106,19 @@ export class MapaFamiliasEtnicasComponent implements AfterViewInit {
 
     this.familiaSeleccionada = familia;
 
-    this.lenguasService.getPorFamilia(familia)
-      .subscribe(res => {
-
+    this.lenguasService.getPorFamilia(familia).subscribe({
+      next: (res) => {
         this.lenguasSeleccionadas = res || [];
 
         this.map.closePopup();
 
-        // limpiar cualquier marcador si existiera
         this.layer.clearLayers();
-      });
+      },
+      error: (err) => {
+        console.error('❌ Error cargando lenguas:', err);
+        this.lenguasSeleccionadas = [];
+      }
+    });
   }
 
   cerrarPanel(): void {

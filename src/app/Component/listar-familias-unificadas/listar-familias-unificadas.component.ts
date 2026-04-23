@@ -40,10 +40,20 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
   }
 
   cargarDatos(): void {
-    this.service.getFamiliasUnificadas().subscribe(data => {
-      this.listarFamilias = data.map(x => x.trim());
-      this.listaFiltrada = [...this.listarFamilias];
-      this.calcularPaginacion();
+    this.service.getFamiliasUnificadas().subscribe({
+      next: (data) => {
+        this.listarFamilias = data.map(x => x.trim());
+        this.listaFiltrada = [...this.listarFamilias];
+        this.calcularPaginacion();
+      },
+      error: (err) => {
+        console.error('❌ Error cargando familias:', err);
+
+        // opcional: evitar pantalla vacía
+        this.listarFamilias = [];
+        this.listaFiltrada = [];
+        this.datosPaginados = [];
+      }
     });
   }
 
@@ -94,10 +104,16 @@ export class ListarFamiliasUnificadasComponent implements OnInit {
     this.videos = [];
 
     this.multimediaService.getMaterial(familia, 'imagenes')
-      .subscribe(r => this.imagenes = r);
+      .subscribe({
+        next: (r) => this.imagenes = r,
+        error: (err) => console.error('❌ Error imágenes:', err)
+      });
 
     this.multimediaService.getMaterial(familia, 'videos')
-      .subscribe(r => this.videos = r);
+      .subscribe({
+        next: (r) => this.videos = r,
+        error: (err) => console.error('❌ Error videos:', err)
+      });
   }
 
   cerrarModal(): void {

@@ -31,7 +31,14 @@ export class ListarPueblosUnificadosComponent implements OnInit {
         this.listaFiltrada = [...this.listarPueblos];
         this.calcularPaginacion();
       },
-      error: (err) => console.error('Error:', err)
+      error: (err) => {
+        console.error('❌ Error cargando pueblos unificados:', err);
+
+        // evita pantalla vacía sin explicación
+        this.listarPueblos = [];
+        this.listaFiltrada = [];
+        this.datosPaginados = [];
+      }
     });
   }
 
